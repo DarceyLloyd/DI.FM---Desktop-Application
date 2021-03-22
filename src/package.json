@@ -1,0 +1,45 @@
+{
+  "name": "di-fm-desktop-app",
+  "version": "1.0.2",
+  "description": "DI.FM Desktop Application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron --inspect=6000 .",
+    "startDist": "electron .",
+    "watch": "nodemon --exec electron --inspect=6000 .",
+    "buildWin": "electron-builder build -w",
+    "buildMac": "electron-builder build -m",
+    "buildLinux": "electron-builder build -l",
+    "winCreateCert": "electron-builder create-self-signed-cert --publisher='darcey.lloyd@gmail.com'"
+  },
+  "repository": "https://github.com/DarceyLloyd/DI.FM---Desktop-Application",
+  "homepage": "https://github.com/DarceyLloyd/DI.FM---Desktop-Application",
+  "keywords": [],
+  "author": "darcey.lloyd@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^12.0.1",
+    "electron-builder": "^22.10.5",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "electron-window-state": "^5.0.3"
+  },
+  "build": {
+    "appId": "com.aftc.di-fm-desktop-app",
+    "productName": "DI.FM",
+    "copyright": "AFTC LTD",
+    "win": {
+      "certificateFile": "private/darcey.lloyd@gmail.com.pfx",
+      "certificatePassword": "",
+      "verifyUpdateCodeSignature": false
+    },
+    "linux": {
+      "category": "utility"
+    },
+    "mac": {
+      "category": "public.app-category.utilities",
+      "target": "dmg"
+    }
+  }
+}
